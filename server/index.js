@@ -4,6 +4,7 @@ import { sequelize } from './utils/database.js'
 import cors from 'cors' 
 
 import { router } from './routes/index.js'
+import { errorHandler } from './middleware/ErrorHandler.js'
 import {
   User,
   Basket,
@@ -21,6 +22,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/api', router)
+
+app.use(errorHandler) //Always the last Middleware!
 
 const start = async () => {
   try {
