@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import { sequelize } from './utils/database.js'
+import cors from 'cors' 
 
 import {
   User,
@@ -15,6 +16,9 @@ import {
 } from './models/models.js'
 
 const app = express()
+
+app.use(cors())
+app.use(express.json())
 
 const start = async () => {
   try {
