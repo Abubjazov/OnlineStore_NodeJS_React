@@ -8,6 +8,6 @@ export class UserController {
     }
 
     async checkAuth(req, res) {
-
+        res.json({message: `It's OK! From checkAuth`})
     }
 }
