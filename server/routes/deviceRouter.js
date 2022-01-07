@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
-router.get('/device', )
-router.get('/device/:id', )
-router.post('/device', )
+deviceRouter.get('/', )
+deviceRouter.get('/:id', )
+deviceRouter.post('/', )
 
-export const router = new Router()
+export const deviceRouter = new Router()

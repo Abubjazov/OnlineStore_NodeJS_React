@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-router.get('/type', )
-router.post('/type', )
+typeRouter.get('/', )
+typeRouter.post('/', )
 
-export const router = new Router()
+export const typeRouter = new Router()

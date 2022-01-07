@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
-router.get('/auth', )
-router.post('/registration', )
-router.post('/login', )
+userRouter.get('/auth', )
+userRouter.post('/registration', )
+userRouter.post('/login', )
 
-export const router = new Router()
+export const userRouter = new Router()

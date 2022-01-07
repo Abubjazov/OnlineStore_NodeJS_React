@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-router.get('/brand', )
-router.post('/brand', )
+brandRouter.get('/', )
+brandRouter.post('/', )
 
-export const router = new Router()
+export const brandRouter = new Router()
