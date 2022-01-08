@@ -3,7 +3,7 @@ import { Brand } from '../models/models.js'
 export class BrandController {
     async create(req, res) {
         const { name } = req.body
-        const brand = await Brand.create({name})
+        const brand = await Brand.create({ name })
 
         return res.json(brand)
     }

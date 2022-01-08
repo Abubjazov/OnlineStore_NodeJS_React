@@ -3,7 +3,7 @@ import { Type } from '../models/models.js'
 export class TypeController {
     async create(req, res) {
         const { name } = req.body
-        const type = await Type.create({name})
+        const type = await Type.create({ name })
 
         return res.json(type)
     }
