@@ -52,13 +52,8 @@ export class UserController {
     }
 
     async checkAuth(req, res, next) {
-        const {id} = req.query
+        const token = generateJwt(req.user.id, req.user.email, req.user.role)
 
-        if (!id) return next(ApiError.badRequest('No user ID'))
-
-        res.json({
-            message: `It's OK! From checkAuth`,
-            id
-        })
+        return res.json({ token })
     }
 }
