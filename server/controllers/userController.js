@@ -1,9 +1,16 @@
 import bcrypt from 'bcrypt'
 import Jwt  from 'jsonwebtoken'
 
-
 import { ApiError } from '../error/ApiError.js'
 import { Basket, User } from '../models/models.js'
+
+const generateJwt = (id, email, role) => {
+    return Jwt.sign(
+        { id: id, email, role}, 
+        process.env.SECRET_KEY,
+        {expiresIn: '8h'}
+    )
+}
 
 export class UserController {
     async registration(req, res, next) {
@@ -20,11 +27,7 @@ export class UserController {
         const hashPassword = await bcrypt.hash(password, 5)
         const user = await User.create({ email, role, password: hashPassword })
         const basket = await Basket.create({ userId: user.id })
-        const token = Jwt.sign(
-            { id: user.id, email, role}, 
-            process.env.SECRET_KEY,
-            {expiresIn: '8h'}
-        )
+        const token = generateJwt(user.id, user.email, user.role)
 
         return res.json({ token })
     }
