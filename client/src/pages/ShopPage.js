@@ -1,10 +1,9 @@
 import React from 'react'
 
-export const Auth = () => {
+export const ShopPage = () => {
     return (
         <div>
-            AUTH
+            SHOP
         </div>
     )
 }
-

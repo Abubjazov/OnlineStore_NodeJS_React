@@ -1,8 +1,8 @@
+import { AppRouter } from './components/AppRouter'
+
 const App = () => {
   return (
-    <div>
-      IT'S WORKING
-    </div>
+    <AppRouter />
   )
 }
 

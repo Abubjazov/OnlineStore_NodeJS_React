@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Shop = () => {
+export const BasketPage = () => {
     return (
         <div>
-            SHOP
+            BASKET PAGE
         </div>
     )
 }

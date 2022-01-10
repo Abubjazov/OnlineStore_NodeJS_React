@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Basket = () => {
+export const AdminPage = () => {
     return (
         <div>
-            BASKET PAGE
+            ADMIN PANNEL
         </div>
     )
 }

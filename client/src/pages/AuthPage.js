@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Admin = () => {
+export const AuthPage = () => {
     return (
         <div>
-            ADMIN PANNEL
+            AUTH
         </div>
     )
 }
+
