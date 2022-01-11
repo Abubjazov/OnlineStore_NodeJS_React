@@ -8,8 +8,6 @@ import { authRoutes, publicRoutes } from '../routes'
 export const AppRouter = () => {
     const { user } = useContext(Context)
 
-    console.log(user)
-
     return (
         <BrowserRouter>
             <Routes>
