@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import { Context } from '..'
 import { Nav, Navbar, Container } from 'react-bootstrap'
 import { observer } from 'mobx-react-lite'
+
 import { ADMIN_ROUTE, SHOP_ROUTE } from '../utils/consts'
+import { Context } from '..'
 
 export const NavBar = observer(() => {
     const { user } = useContext(Context)
