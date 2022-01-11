@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import { Context } from '..'
 import { Page404 } from '../pages'
 import { authRoutes, publicRoutes } from '../routes'
