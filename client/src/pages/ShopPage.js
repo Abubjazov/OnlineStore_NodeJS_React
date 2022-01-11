@@ -5,7 +5,7 @@ import { TypeBar } from '../components/TypeBar'
 export const ShopPage = () => {
     return (
         <Container>
-            <Row>
+            <Row className='mt-1'>
                 <Col md={3}>
                     <TypeBar />
                 </Col>
