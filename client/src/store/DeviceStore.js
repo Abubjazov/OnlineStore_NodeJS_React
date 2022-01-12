@@ -10,11 +10,23 @@ export class DeviceStore {
         ]
         this._brands = [
             { id: 1, name: 'apple' },
-            { id: 2, name: 'samsung' }
+            { id: 2, name: 'samsung' },
+            { id: 3, name: 'apple' },
+            { id: 4, name: 'samsung' },
+            { id: 5, name: 'apple' },
+            { id: 6, name: 'samsung' },
+            { id: 7, name: 'apple' },
+            { id: 8, name: 'samsung' }
         ]
         this._devices = [
             { id: 1, name: 'iPhone 13 Pro', price: 3000, rating: 10, img: '5u4xh5uO0gincKtbmBXvD.jpg' },
-            { id: 2, name: '50PUS6504_60-IMS-ru_RU', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' }
+            { id: 2, name: '50PUS6504', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' },
+            { id: 3, name: 'iPhone 13 Pro', price: 3000, rating: 10, img: '5u4xh5uO0gincKtbmBXvD.jpg' },
+            { id: 4, name: '50PUS6504', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' },
+            { id: 5, name: 'iPhone 13 Pro', price: 3000, rating: 10, img: '5u4xh5uO0gincKtbmBXvD.jpg' },
+            { id: 6, name: '50PUS6504', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' },
+            { id: 7, name: 'iPhone 13 Pro', price: 3000, rating: 10, img: '5u4xh5uO0gincKtbmBXvD.jpg' },
+            { id: 8, name: '50PUS6504', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' }
         ]
         this._selectedType = {}
         this._selectedBrand = {}
