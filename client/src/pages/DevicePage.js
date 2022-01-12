@@ -22,7 +22,7 @@ export const DevicePage = () => {
 
                 <Col md={4}>
                     <Row className='d-flex flex-column align-items-center'>
-                        <h2>{device.name}</h2>
+                        <h2 style={{ textAlign: 'center' }}>{device.name}</h2>
                         <div
                             className='d-flex justify-content-center align-items-center'
                             style={{ background: `url(${star}) no-repeat center center`, width: 250, height: 250, backgroundSize: 'cover', fontSize: 64 }}
@@ -42,8 +42,8 @@ export const DevicePage = () => {
                 </Col>
             </Row>
 
-            <Row className='d-flex flex-column m-3'>
-                <h1>Specifications</h1>
+            <Row className='d-flex flex-column m-5'>
+                <h1 style={{ textAlign: 'center' }}>Specifications</h1>
                 {description.map((item, index) =>
                     <Row key={item.id} style={{ background: index % 2 === 0 ? 'lightgray' : 'transparent', padding: 10 }}>
                         {item.title}: {item.desc}
