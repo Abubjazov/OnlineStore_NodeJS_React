@@ -14,10 +14,11 @@ export const BrandBar = observer(() => {
             {device.brands.map(brand =>
                 <Card
                     key={brand.name + brand.id}
-                    className='p-3 m-1 align-items-center border-dark'
-                    onClick={() => device.setSelectedBrand(brand)}
+                    className='p-3 m-1 align-items-center border-dark '
+                    onClick={brand.id === device.selectedBrand.id ? () => device.setSelectedBrand({}) : () => device.setSelectedBrand(brand)}
                     bg={brand.id === device.selectedBrand.id ? 'dark' : 'light'}
                     text={brand.id === device.selectedBrand.id ? 'light' : 'dark'}
+                    style={{ cursor: 'pointer' }}
                 >
                     {normalizeString(brand.name, 0)}
                 </Card>
