@@ -9,14 +9,15 @@ export class DeviceStore {
             { id: 4, name: 'refrigerators' }
         ]
         this._brands = [
-            { id: 1, name: 'Apple' },
-            { id: 2, name: 'Samsung' }
+            { id: 1, name: 'apple' },
+            { id: 2, name: 'samsung' }
         ]
         this._devices = [
             { id: 1, name: 'iPhone 13 Pro', price: 3000, rating: 10, img: '5u4xh5uO0gincKtbmBXvD.jpg' },
             { id: 2, name: '50PUS6504_60-IMS-ru_RU', price: 5000, rating: 10, img: 'omDFZwHZ-jpjUtkdAv0xX.jpg' }
         ]
         this._selectedType = {}
+        this._selectedBrand = {}
 
         makeAutoObservable(this)
     }
@@ -37,6 +38,10 @@ export class DeviceStore {
         this._selectedType = type
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     get types() {
         return this._types
     }
@@ -51,5 +56,9 @@ export class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }

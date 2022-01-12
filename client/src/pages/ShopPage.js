@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Container, Form, FormControl, Button, Row, Col } from 'react-bootstrap'
+import { BrandBar } from '../components/BrandBar'
 import { TypeBar } from '../components/TypeBar'
 
 export const ShopPage = () => {
@@ -10,7 +11,7 @@ export const ShopPage = () => {
                     <TypeBar />
                 </Col>
                 <Col md={9}>
-
+                    <BrandBar />
                 </Col>
             </Row>
         </Container>

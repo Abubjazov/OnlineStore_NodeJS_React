@@ -13,7 +13,7 @@ export const TypeBar = observer(() => {
             {
                 device.types.map(type =>
                     <ListGroup.Item
-                        key={type.id}
+                        key={type.name + type.id}
                         action
                         onClick={() => device.setSelectedType(type)}
                     >{normalizeString(type.name, 0)}</ListGroup.Item>
