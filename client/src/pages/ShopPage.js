@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Container, Form, FormControl, Button, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { BrandBar } from '../components/BrandBar'
 import { DeviceList } from '../components/DeviceList'
 import { TypeBar } from '../components/TypeBar'
