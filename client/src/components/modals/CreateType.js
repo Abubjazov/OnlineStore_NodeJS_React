@@ -1,30 +1,31 @@
 import React from 'react'
+import { Button, Form, Modal } from 'react-bootstrap'
 
-export const CreateType = () => {
+export const CreateType = ({ show, onHide }) => {
     return (
         <Modal
-            {...props}
+            show={show}
+            onHide={onHide}
             size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
             centered
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                    Add New Type
                 </Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <h4>Centered Modal</h4>
-                <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                </p>
+                <Form>
+                    <Form.Control
+                        placeholder={'Input type name'}
+                    />
+                </Form>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button variant='outline-danger' onClick={onHide}>Close</Button>
+                <Button variant='outline-success' onClick={onHide}>Add</Button>
             </Modal.Footer>
         </Modal>
     )

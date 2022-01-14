@@ -21,7 +21,7 @@ export const NavBar = observer(() => {
                             <Button variant='outline-light' onClick={() => navigate(LOGIN_ROUTE, { replace: true })}>LogOut</Button>
                         </>
                         :
-                        <Button variant='outline-light' onClick={() => user.setIsAuth(true)}>LogIn</Button>
+                        <Button variant='outline-light' >LogIn</Button>
                     }
                 </Nav>
             </Container>
