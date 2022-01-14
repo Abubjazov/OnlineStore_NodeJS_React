@@ -25,7 +25,7 @@ export const CreateBrand = ({ show, onHide }) => {
 
             <Modal.Footer>
                 <Button variant='outline-danger' onClick={onHide}>Close</Button>
-                <Button variant='outline-success' onClick={onHide}>Add</Button>
+                <Button variant='outline-dark' onClick={onHide}>Add</Button>
             </Modal.Footer>
         </Modal>
     )
