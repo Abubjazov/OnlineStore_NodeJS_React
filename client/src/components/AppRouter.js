@@ -14,7 +14,7 @@ export const AppRouter = () => {
         <BrowserRouter>
             <NavBar />
             <Routes>
-                {user.isAuth && authRoutes.map(({ path, Component }, index) =>
+                {authRoutes.map(({ path, Component }, index) => //user.isAuth && 
                     <Route key={index + path} path={path} element={<Component />} />
                 )}
 
