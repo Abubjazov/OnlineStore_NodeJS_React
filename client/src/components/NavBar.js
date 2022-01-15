@@ -10,6 +10,11 @@ export const NavBar = observer(() => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
 
+    const logOut = () => {
+        user.setUser({})
+        user.setIsAuth(false)
+    }
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -18,10 +23,10 @@ export const NavBar = observer(() => {
                     {user.IsAuth ?
                         <>
                             <Button variant='outline-light' onClick={() => navigate(ADMIN_ROUTE, { replace: true })} style={{ marginRight: 5 }}>Admin</Button>
-                            <Button variant='outline-light' onClick={() => navigate(LOGIN_ROUTE, { replace: true })}>LogOut</Button>
+                            <Button variant='outline-light' onClick={() => logOut()}>LogOut</Button>
                         </>
                         :
-                        <Button variant='outline-light' >LogIn</Button>
+                        <Button variant='outline-light' onClick={() => navigate(LOGIN_ROUTE, { replace: true })}>LogIn</Button>
                     }
                 </Nav>
             </Container>

@@ -1,23 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Card, Container, Form, FormControl, Button, Row, Col } from 'react-bootstrap'
-import { NavLink, useLocation } from 'react-router-dom'
-import { login, registration } from '../http/userAPI'
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
 
-export const AuthPage = () => {
+import { login, registration } from '../http/userAPI'
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
+import { Context } from '..'
+
+export const AuthPage = observer(() => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const { user } = useContext(Context)
     const location = useLocation()
+    const navigate = useNavigate()
     const isLogin = location.pathname === LOGIN_ROUTE
 
     const checkIn = async () => {
-        if (isLogin) {
-            const response = await login(email, password)
-            console.log(response)
-        } else {
-            const response = await registration(email, password)
-            console.log(response)
+        try {
+            if (isLogin) {
+                await login(email, password)
+            } else {
+                await registration(email, password)
+            }
+            user.setUser(user)
+            user.setIsAuth(true)
+            navigate(SHOP_ROUTE, { replace: true })
+        } catch (error) {
+            alert(error.response.data.message)
         }
     }
 
@@ -60,5 +70,4 @@ export const AuthPage = () => {
             </Card>
         </Container>
     )
-}
-
+})
