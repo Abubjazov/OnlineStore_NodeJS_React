@@ -13,7 +13,7 @@ export const BrandBar = observer(() => {
         <Row md={6}>
             {device.brands.map(brand =>
                 <Card
-                    key={brand.name + brand.id}
+                    key={brand.id}
                     className='p-3 m-1 align-items-center border-dark '
                     onClick={brand.id === device.selectedBrand.id ? () => device.setSelectedBrand({}) : () => device.setSelectedBrand(brand)}
                     bg={brand.id === device.selectedBrand.id ? 'dark' : 'light'}

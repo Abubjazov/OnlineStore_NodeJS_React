@@ -12,7 +12,7 @@ export const DeviceList = observer(() => {
     return (
         <Row md={6}>
             {device.devices.map(device =>
-                <DeviceItem key={device.name + device.id} device={device} />
+                <DeviceItem key={device.id} device={device} />
             )}
         </Row>
     )

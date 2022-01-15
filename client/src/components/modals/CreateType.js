@@ -6,11 +6,12 @@ export const CreateType = ({ show, onHide }) => {
     const [typeStr, setTypeStr] = useState('')
 
     const addType = () => {
-        createType({ name: typeStr }).then(data => {
+        createType({ name: typeStr }).then(() => {
             setTypeStr('')
             onHide()
         })
     }
+
     return (
         <Modal
             show={show}
@@ -27,7 +28,7 @@ export const CreateType = ({ show, onHide }) => {
             <Modal.Body>
                 <Form>
                     <Form.Control
-                        typestr={typeStr}
+                        typevalue={typeStr}
                         onChange={e => setTypeStr(e.target.value)}
                         placeholder={'Input type name'}
                     />
