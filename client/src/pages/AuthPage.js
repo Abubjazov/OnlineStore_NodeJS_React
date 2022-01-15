@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Container, Form, FormControl, Button, Row, Col } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom'
+import { login, registration } from '../http/userAPI'
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts'
 
 export const AuthPage = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
+
+    const checkIn = async () => {
+        if (isLogin) {
+            const response = await login(email, password)
+            console.log(response)
+        } else {
+            const response = await registration(email, password)
+            console.log(response)
+        }
+    }
 
     return (
         <Container
@@ -18,15 +32,22 @@ export const AuthPage = () => {
                     <FormControl
                         className='mt-3'
                         placeholder='email'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        type='email'
                     />
                     <FormControl
                         className='mt-3'
                         placeholder='password'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        type='password'
                     />
                     <Row className='mt-3 pl-3 pr-3'>
                         <Col>
                             <Button
                                 variant='outline-success'
+                                onClick={checkIn}
                             >{isLogin ? 'LogIn' : 'SignUp'}</Button>
                         </Col>
                         <Col>

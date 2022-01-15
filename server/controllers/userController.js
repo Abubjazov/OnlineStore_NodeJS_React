@@ -1,14 +1,14 @@
 import bcrypt from 'bcrypt'
-import Jwt  from 'jsonwebtoken'
+import Jwt from 'jsonwebtoken'
 
 import { ApiError } from '../error/ApiError.js'
 import { Basket, User } from '../models/models.js'
 
 const generateJwt = (id, email, role) => {
     return Jwt.sign(
-        { id, email, role}, 
+        { id, email, role },
         process.env.SECRET_KEY,
-        {expiresIn: '8h'}
+        { expiresIn: '8h' }
     )
 }
 
@@ -21,7 +21,7 @@ export class UserController {
 
         const candidate = await User.findOne({ where: { email } })
         if (candidate) {
-            return next(ApiError.badRequest(`User with email: ${ email } already exists`))
+            return next(ApiError.badRequest(`User with email: ${email} already exists`))
         }
 
         const hashPassword = await bcrypt.hash(password, 5)
