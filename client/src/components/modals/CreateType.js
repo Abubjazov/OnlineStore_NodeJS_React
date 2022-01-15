@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
+import { createType } from '../../http/deviceAPI'
 
 export const CreateType = ({ show, onHide }) => {
+    const [typeStr, setTypeStr] = useState('')
+
+    const addType = () => {
+        createType({ name: typeStr }).then(data => {
+            setTypeStr('')
+            onHide()
+        })
+    }
     return (
         <Modal
             show={show}
@@ -18,6 +27,8 @@ export const CreateType = ({ show, onHide }) => {
             <Modal.Body>
                 <Form>
                     <Form.Control
+                        typestr={typeStr}
+                        onChange={e => setTypeStr(e.target.value)}
                         placeholder={'Input type name'}
                     />
                 </Form>
@@ -25,7 +36,7 @@ export const CreateType = ({ show, onHide }) => {
 
             <Modal.Footer>
                 <Button variant='outline-danger' onClick={onHide}>Close</Button>
-                <Button variant='outline-dark' onClick={onHide}>Add</Button>
+                <Button variant='outline-dark' onClick={addType}>Add</Button>
             </Modal.Footer>
         </Modal>
     )
