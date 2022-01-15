@@ -13,6 +13,7 @@ export const NavBar = observer(() => {
     const logOut = () => {
         user.setUser({})
         user.setIsAuth(false)
+        localStorage.removeItem('token') //.setItem('token', data.token)
     }
 
     return (
@@ -23,7 +24,10 @@ export const NavBar = observer(() => {
                     {user.IsAuth ?
                         <>
                             <Button variant='outline-light' onClick={() => navigate(ADMIN_ROUTE, { replace: true })} style={{ marginRight: 5 }}>Admin</Button>
-                            <Button variant='outline-light' onClick={() => logOut()}>LogOut</Button>
+                            <Button variant='outline-light' onClick={() => {
+                                logOut()
+                                navigate(SHOP_ROUTE, { replace: true })
+                            }}>LogOut</Button>
                         </>
                         :
                         <Button variant='outline-light' onClick={() => navigate(LOGIN_ROUTE, { replace: true })}>LogIn</Button>
